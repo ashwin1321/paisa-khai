@@ -32,7 +32,7 @@ app.get('*', (req, res) => {
 
 // listen
 connectDb().then(() => {
-  app.listen(5000, () => {
+  app.listen(7000, () => {
     console.log(`Server is running on port 5000`.yellow.bold);
   });
 })
