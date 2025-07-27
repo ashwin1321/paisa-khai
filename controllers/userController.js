@@ -48,13 +48,13 @@ const registerController = async (req, res) => {
 
     if (userfind === null || emailfind === null) {
       if (userfind !== null) {
-        res.json({
+        res.status(409).json({
           userExists: "user already exists"
         })
         return;
       }
       if (emailfind !== null) {
-        res.json({
+        res.status(409).json({
           emailExists: "email already exists"
         })
         return;
@@ -62,7 +62,7 @@ const registerController = async (req, res) => {
     }
 
     if (userfind.name === name) {
-      res.json({
+      res.status(409).json({
         userExists: "user already exists"
       })
       return;
